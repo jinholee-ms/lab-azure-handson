@@ -208,3 +208,6 @@ __marimo__/
 
 # Azure Machine Learning
 artifact_downloads/
+
+# Local
+.DS_Store
