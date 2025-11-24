@@ -1,0 +1,4 @@
+{"custom_id": "1", "method": "POST", "url": "/chat/completions", "body": {"model": "gpt-4o-batch", "messages": [{"role": "user", "content": "봄에 가기 좋은 여행 장소 추천해줘."}]}}
+{"custom_id": "2", "method": "POST", "url": "/chat/completions", "body": {"model": "gpt-4o-batch", "messages": [{"role": "user", "content": "여름에 가기 좋은 여행 장소 추천해줘."}]}}
+{"custom_id": "3", "method": "POST", "url": "/chat/completions", "body": {"model": "gpt-4o-batch", "messages": [{"role": "user", "content": "가을에 가기 좋은 여행 장소 추천해줘."}]}}
+{"custom_id": "4", "method": "POST", "url": "/chat/completions", "body": {"model": "gpt-4o-batch", "messages": [{"role": "user", "content": "겨울에 가기 좋은 여행 장소 추천해줘."}]}}
