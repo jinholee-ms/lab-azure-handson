@@ -98,7 +98,7 @@ cluster_graph:
   max_cluster_size: 10
 
 extract_claims:
-  enabled: false
+  enabled: true
   model_id: default_chat_model
   prompt: "prompts/extract_claims.txt"
   description: "Any claims or facts that could be relevant to information discovery."
@@ -112,13 +112,13 @@ community_reports:
   max_input_length: 8000
 
 embed_graph:
-  enabled: false # if true, will generate node2vec embeddings for nodes
+  enabled: true # if true, will generate node2vec embeddings for nodes
 
 umap:
-  enabled: false # if true, will generate UMAP embeddings for nodes (embed_graph must also be enabled)
+  enabled: true # if true, will generate UMAP embeddings for nodes (embed_graph must also be enabled)
 
 snapshots:
-  graphml: false
+  graphml: true
   embeddings: false
 
 ### Query settings ###
