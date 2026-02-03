@@ -7,12 +7,9 @@
 models:
   default_chat_model:
     type: chat
-    model_provider: azure
-    auth_type: api_key # or azure_managed_identity
+    model_provider: openai
     api_key: ${AZURE_OPENAI_API_KEY}
     api_base: ${AZURE_OPENAI_ENDPOINT}
-    api_version: ${AZURE_OPENAI_API_VERSION}
-    deployment_name: ${AZURE_OPENAI_CHAT_DEPLOYMENT}
     model: ${AZURE_OPENAI_CHAT_DEPLOYMENT}
     model_supports_json: true # recommended if this is available for your model.
     concurrent_requests: 25
@@ -26,7 +23,7 @@ models:
     model_provider: azure
     auth_type: api_key
     api_key: ${AZURE_OPENAI_API_KEY}
-    api_base: ${AZURE_OPENAI_ENDPOINT}
+    api_base: ${AZURE_OPENAI_EMBEDDING_ENDPOINT}
     api_version: ${AZURE_OPENAI_API_VERSION}
     model: ${AZURE_OPENAI_EMBEDDING_DEPLOYMENT}
     deployment_name: ${AZURE_OPENAI_EMBEDDING_DEPLOYMENT}

@@ -15,9 +15,17 @@ Azure AI 서비스를 활용한 실습 자료입니다. Azure OpenAI, AI Search,
 
 1. `.env.example`을 `.env`로 복사하고 필요한 값을 설정합니다.
 
-```bash
-cp .env.example .env
-```
+### 운영체제별 예시
+
+- **Windows** (명령 프롬프트):
+  ```cmd
+  copy .env.example .env
+  ```
+
+- **MacOS / Linux** (터미널):
+  ```bash
+  cp .env.example .env
+  ```
 
 2. `.env` 파일에 아래 항목들을 설정합니다.
 
@@ -27,7 +35,9 @@ cp .env.example .env
 | `AZURE_MS_FOUNDRY_API_KEY` | Azure AI Foundry API 키 | [envs-project.png](./assets/envs-project.png) |
 | `AZURE_OPENAI_ENDPOINT` | Azure OpenAI 엔드포인트 | [envs-openai-001.png](./assets/envs-openai-001.png) |
 | `AZURE_OPENAI_API_KEY` | Azure OpenAI API 키 | [envs-openai-002.png](./assets/envs-openai-002.png) |
+| `AZURE_OPENAI_WESTUS3_ENDPOINT` | Azure OpenAI 엔드포인트 (Multimodal용) | [envs-openai-001.png](./assets/envs-openai-001.png) |
 | `AZURE_OPENAI_CHAT_DEPLOYMENT` | Chat 모델 배포 이름 | [envs-openai-003.png](./assets/envs-openai-003.png) |
+| `AZURE_OPENAI_EMBEDDING_ENDPOINT` | Embedding 모델 엔드포인트 | [envs-openai-embedding.png](./assets/envs-openai-embedding.png) |
 | `AZURE_OPENAI_EMBEDDING_DEPLOYMENT` | Embedding 모델 배포 이름 | [envs-openai-003.png](./assets/envs-openai-003.png) |
 | `AZURE_AI_SEARCH_ENDPOINT` | Azure AI Search 엔드포인트 | [envs-ai-search-001.png](./assets/envs-ai-search-001.png) |
 | `AZURE_AI_SEARCH_ADMIN_KEY` | Azure AI Search Admin 키 | [envs-ai-search-002.png](./assets/envs-ai-search-002.png) |
