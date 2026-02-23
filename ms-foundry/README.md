@@ -4,7 +4,7 @@ Azure AI 서비스를 활용한 실습 자료입니다. Azure OpenAI, AI Search,
 
 ## Prerequisites
 
-- Python 3.12
+- [Python 3.12](../README.md#1-python-312-설치) 
 - Azure 구독 및 리소스
   - Azure OpenAI
   - Azure AI Search
@@ -80,30 +80,12 @@ ms-foundry/
 ├── assets/                  # 환경 설정 스크린샷
 ├── graphrag/                # GraphRAG 데이터
 ├── resources/               # 샘플 데이터
-│   ├── batch_inputs.jsonl
-│   ├── KB주택시장리뷰_2025년 10월호.pdf
-│   ├── KR_Merchants_Sample.csv
-│   └── 대한민국 헌법.pdf
 ├── .env.example             # 환경 변수 예시
 ├── settings.yaml            # GraphRAG 설정
 └── README.md
 ```
 
 ## 주요 패키지
-
-```bash
-# Model
-pip install openai azure-ai-projects azure-identity
-
-# RAG
-pip install azure-search-documents azure-ai-documentintelligence langchain langchain-openai graphrag
-
-# Agent
-pip install agent-framework
-
-# MCP
-pip install mcp
-```
 
 > 각 노트북의 첫 번째 셀에서 필요한 패키지를 자동으로 설치합니다.
 
