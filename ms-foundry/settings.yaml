@@ -78,7 +78,7 @@ embed_text:
 extract_graph:
   model_id: default_chat_model
   prompt: "prompts/extract_graph.txt"
-  entity_types: [organization,person,geo,event]
+  entity_types: [organization,person,geo,event,clause,violation,penalty,fine,sanction,monetarayamount]
   max_gleanings: 1
 
 summarize_descriptions:
