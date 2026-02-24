@@ -1,6 +1,6 @@
 // =============================================================================
-// Microsoft Foundry + Document Intelligence + AI Search
-// 동물 이름 사용자용 리소스 그룹, Foundry, Document Intelligence, AI Search 및 Contributor RBAC
+// Microsoft Foundry + Document Intelligence + AI Search + Grounding with Bing Search
+// 동물 이름 사용자용 리소스 그룹, Foundry, Document Intelligence, AI Search, Bing Grounding 및 Contributor RBAC
 // =============================================================================
 
 @description('리소스 그룹 이름')
@@ -22,6 +22,9 @@ param docName string
 @minLength(2)
 @maxLength(60)
 param searchServiceName string
+
+@description('Grounding with Bing Search 리소스 이름. prefix: bing-, Foundry 연결용')
+param bingName string
 
 @description('Resource Group에 Contributor 권한을 부여할 사용자의 Object (Principal) ID. 스크립트로 생성 후 전달')
 param userPrincipalId string
@@ -107,6 +110,24 @@ resource searchService 'Microsoft.Search/searchServices@2020-08-01' = {
 }
 
 // -----------------------------------------------------------------------------
+// Grounding with Bing Search (Foundry 연결용). location: global, kind: Bing.Grounding
+// 사전에 az provider register --namespace 'Microsoft.Bing' 필요할 수 있음
+// BCP081: Microsoft.Bing 리소스 타입 정의가 Bicep에 없어 검증 불가. 배포는 정상 동작.
+// -----------------------------------------------------------------------------
+@suppress('BCP081')
+resource bingGrounding 'Microsoft.Bing/accounts@2020-06-10' = {
+  name: bingName
+  location: 'global'
+  sku: {
+    name: 'G1'
+  }
+  kind: 'Bing.Grounding'
+  properties: {
+    statisticsEnabled: false
+  }
+}
+
+// -----------------------------------------------------------------------------
 // RBAC: 해당 사용자에게 Resource Group 수준 Contributor 부여
 // -----------------------------------------------------------------------------
 resource rgContributor 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
@@ -142,5 +163,7 @@ output documentIntelligenceEndpoint string = docIntelligence.properties.endpoint
 output docIntelligenceId string = docIntelligence.id
 output searchEndpoint string = 'https://${searchService.name}.search.windows.net'
 output searchServiceName string = searchService.name
+output bingGroundingId string = bingGrounding.id
+output bingGroundingName string = bingGrounding.name
 output resourceGroupName string = resourceGroupName
 output location string = location

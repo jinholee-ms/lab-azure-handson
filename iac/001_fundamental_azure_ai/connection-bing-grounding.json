@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.40.2.10011",
+      "templateHash": "16683581684757104993"
+    }
+  },
+  "parameters": {
+    "foundryName": {
+      "type": "string",
+      "metadata": {
+        "description": "Foundry(AI Services) 계정 이름"
+      }
+    },
+    "bingName": {
+      "type": "string",
+      "metadata": {
+        "description": "Bing Grounding 리소스 이름"
+      }
+    },
+    "bingApiKey": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Bing Grounding API 키 (Azure Portal Keys and Endpoint 또는 az rest listKeys로 조회)"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.CognitiveServices/accounts/connections",
+      "apiVersion": "2025-04-01-preview",
+      "name": "[format('{0}/{1}', parameters('foundryName'), format('{0}-bing-grounding', parameters('foundryName')))]",
+      "properties": {
+        "category": "ApiKey",
+        "target": "https://api.bing.microsoft.com/",
+        "authType": "ApiKey",
+        "isSharedToAll": true,
+        "credentials": {
+          "key": "[parameters('bingApiKey')]"
+        },
+        "metadata": {
+          "ApiType": "Azure",
+          "Type": "bing_grounding",
+          "ResourceId": "[resourceId('Microsoft.Bing/accounts', parameters('bingName'))]"
+        }
+      }
+    }
+  ]
+}
