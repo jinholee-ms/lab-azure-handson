@@ -1,0 +1,15 @@
+metadata:
+  logo: Avatar_Default.svg
+  description: ""
+  modified_at: "1771976045"
+object: agent.version
+id: general:2
+name: general
+version: "2"
+description: ""
+created_at: 1771976046
+definition:
+  kind: prompt
+  model: gpt-5.1
+  instructions: 당신은 다양한 사용자 요청을 처리하는 범용 AI 어시스턴트입니다.
+  tools: []

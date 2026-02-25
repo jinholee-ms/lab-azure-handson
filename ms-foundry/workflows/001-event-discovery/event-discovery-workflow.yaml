@@ -1,0 +1,97 @@
+kind: workflow
+trigger:
+  kind: OnConversationStart
+  id: trigger_wf
+  actions:
+    - kind: InvokeAzureAgent
+      id: action-1768659850474
+      agent:
+        name: triage
+      conversationId: =System.ConversationId
+      input:
+        messages: =System.LastMessage
+      output:
+        autoSend: true
+        messages: Local.TriageOutputText
+        responseObject: Local.TriageOutputJson
+    - kind: ConditionGroup
+      conditions:
+        - condition: =Local.TriageOutputJson.confidence > 0.6
+          actions: []
+          id: if-action-1768659894001-0
+      id: action-1768659894001
+      elseActions:
+        - kind: SendActivity
+          activity: 'The support ticket classification has low confidence. Requesting more details about the issue: "{Local.CurrentTicket}"'
+          id: action-1768659922778
+    - kind: ConditionGroup
+      conditions:
+        - condition: =Local.TriageOutputJson.category = "Microsoft AI Day"
+          actions:
+            - kind: InvokeAzureAgent
+              id: action-1768660045825
+              agent:
+                name: microsoft-ai-day
+              conversationId: =System.ConversationId
+              input:
+                messages: =Local.TriageOutputText
+              output:
+                autoSend: true
+                messages: Local.MicrosoftAIDayText
+          id: if-action-1768659930103-0
+        - condition: =Local.TriageOutputJson.category = "Web Search"
+          actions:
+            - kind: InvokeAzureAgent
+              id: action-1768660042953
+              agent:
+                name: web-search
+              conversationId: =System.ConversationId
+              input:
+                messages: =System.LastMessage
+              output:
+                autoSend: true
+                messages: Local.WebSearchOutputText
+          id: if-action-1768659930103-7tlm3go0
+        - condition: =Local.TriageOutputJson.category = "Korean Constitutional Legal"
+          actions:
+            - kind: InvokeAzureAgent
+              id: action-1768664830473
+              agent:
+                name: legal
+              conversationId: =System.ConversationId
+              input:
+                messages: =System.LastMessage
+              output:
+                autoSend: true
+                messages: Local.KoreanConstitutionalLegalOutputText
+          id: if-action-1768659930103-svk4r5ku
+        - condition: =Local.TriageOutputJson.category = "Korean Subcontracting Act"
+          actions:
+            - kind: InvokeAzureAgent
+              id: node-1771976836690
+              agent:
+                name: subcontracting
+              conversationId: =System.ConversationId
+              input:
+                messages: =System.LastMessage
+              output:
+                autoSend: true
+                messages: Local.KoreanSubcontractingActOutputText
+          id: if-action-1768659930103-p4jf05lz
+      id: action-1768659930103
+      elseActions:
+        - kind: InvokeAzureAgent
+          id: action-1768664785737
+          agent:
+            name: general
+          conversationId: =System.ConversationId
+          input:
+            messages: =System.LastMessage
+          output:
+            autoSend: true
+            messages: Local.GeneralOutputText
+    - kind: EndConversation
+      id: action-1768660157087
+id: ""
+name: event-discovery-workflow
+description: ""
