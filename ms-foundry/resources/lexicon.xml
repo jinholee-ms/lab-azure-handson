@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lexicon version="1.0"
+         xmlns="http://www.w3.org/2005/01/pronunciation-lexicon"
+         alphabet="ipa" xml:lang="ko-KR">
+  <!-- Galaxy 모바일 라인업 -->
+  <lexeme><grapheme>Galaxy</grapheme><alias>갤럭시</alias></lexeme>
+  <lexeme><grapheme>Galaxy Z Flip</grapheme><alias>갤럭시 제트 플립</alias></lexeme>
+  <lexeme><grapheme>Galaxy Z Fold</grapheme><alias>갤럭시 제트 폴드</alias></lexeme>
+  <lexeme><grapheme>Galaxy Buds</grapheme><alias>갤럭시 버즈</alias></lexeme>
+  <lexeme><grapheme>Galaxy Watch</grapheme><alias>갤럭시 워치</alias></lexeme>
+  <lexeme><grapheme>Galaxy Book</grapheme><alias>갤럭시 북</alias></lexeme>
+  <!-- 가전 / TV / 디스플레이 -->
+  <lexeme><grapheme>Bespoke</grapheme><alias>비스포크</alias></lexeme>
+  <lexeme><grapheme>Neo QLED</grapheme><alias>네오 큐엘이디</alias></lexeme>
+  <lexeme><grapheme>QLED</grapheme><alias>큐엘이디</alias></lexeme>
+  <lexeme><grapheme>The Frame</grapheme><alias>더 프레임</alias></lexeme>
+  <lexeme><grapheme>Odyssey</grapheme><alias>오디세이</alias></lexeme>
+  <lexeme><grapheme>Family Hub</grapheme><alias>패밀리 허브</alias></lexeme>
+</lexicon>
