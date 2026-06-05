@@ -9,6 +9,12 @@
   <lexeme><grapheme>Galaxy Buds</grapheme><alias>갤럭시 버즈</alias></lexeme>
   <lexeme><grapheme>Galaxy Watch</grapheme><alias>갤럭시 워치</alias></lexeme>
   <lexeme><grapheme>Galaxy Book</grapheme><alias>갤럭시 북</alias></lexeme>
+  <lexeme><grapheme>Ultra</grapheme><alias>울트라</alias></lexeme>
+  <lexeme><grapheme>mm</grapheme><alias>미리</alias></lexeme>
+  <lexeme><grapheme>360</grapheme><alias>삼육공</alias></lexeme>
+  <lexeme><grapheme>Tap S</grapheme><alias>탭 에쓰</alias></lexeme>
+  <lexeme><grapheme>Tap A</grapheme><alias>탭 에이</alias></lexeme>
+ 
   <!-- 가전 / TV / 디스플레이 -->
   <lexeme><grapheme>Bespoke</grapheme><alias>비스포크</alias></lexeme>
   <lexeme><grapheme>Neo QLED</grapheme><alias>네오 큐엘이디</alias></lexeme>
@@ -16,4 +22,7 @@
   <lexeme><grapheme>The Frame</grapheme><alias>더 프레임</alias></lexeme>
   <lexeme><grapheme>Odyssey</grapheme><alias>오디세이</alias></lexeme>
   <lexeme><grapheme>Family Hub</grapheme><alias>패밀리 허브</alias></lexeme>
+  <lexeme><grapheme>4K</grapheme><alias>포케이</alias></lexeme>
+  <lexeme><grapheme>8K</grapheme><alias>팔케이</alias></lexeme>
+  <lexeme><grapheme>Q9000</grapheme><alias>큐구천</alias></lexeme>
 </lexicon>
