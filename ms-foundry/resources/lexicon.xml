@@ -19,6 +19,7 @@
   <lexeme><grapheme>Bespoke</grapheme><alias>비스포크</alias></lexeme>
   <lexeme><grapheme>Neo QLED</grapheme><alias>네오 큐엘이디</alias></lexeme>
   <lexeme><grapheme>QLED</grapheme><alias>큐엘이디</alias></lexeme>
+  <lexeme><grapheme>OLED</grapheme><alias>오엘이디</alias></lexeme>
   <lexeme><grapheme>The Frame</grapheme><alias>더 프레임</alias></lexeme>
   <lexeme><grapheme>Odyssey</grapheme><alias>오디세이</alias></lexeme>
   <lexeme><grapheme>Family Hub</grapheme><alias>패밀리 허브</alias></lexeme>
